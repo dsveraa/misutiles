@@ -184,7 +184,7 @@ img {
 }
 
 #videoBarcode, #qrPreview video {
-    max-width: 300px;
+    width: 300px;
 }
 
 #closeCamera {
