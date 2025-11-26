@@ -1,3 +1,5 @@
 .env
 img/
 *.sql
+.vercel
+router.php

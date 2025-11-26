@@ -3,13 +3,13 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 require_once "env.php";
 
-$conn = new mysqli(
-                getenv("DB_HOST"),
-                getenv("DB_USER"),
-                getenv("DB_PASS"),
-                getenv("DB_NAME"),
-                getenv("DB_PORT"),
-            );
+$host = getenv("DB_HOST") ?: "localhost";
+$user = getenv("DB_USER") ?: "root";
+$pass = getenv("DB_PASS") ?: "123456";
+$db   = getenv("DB_NAME") ?: "misutiles";
+$port = getenv("DB_PORT") ?: 3306;
+
+$conn = new mysqli($host, $user, $pass, $db, $port);
 
 $conn->set_charset("utf8");
 
