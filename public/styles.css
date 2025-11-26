@@ -183,7 +183,7 @@ img {
     z-index:9999;
 }
 
-#videoBarcode, #qrPreview {
+#videoBarcode, #qrPreview video {
     max-width: 300px;
 }
 
