@@ -1,10 +1,12 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "123456";
-$dbname = "misutiles";
+$host = getenv("DB_HOST") ?: "localhost";
+$user = getenv("DB_USER") ?: "root";
+$pass = getenv("DB_PASS") ?: "123456";
+$db   = getenv("DB_NAME") ?: "misutiles";
+$port = getenv("DB_PORT") ?: 3306;
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $pass, $db, $port);
+
 $conn->set_charset("utf8");
 
 if ($conn->connect_error) {
