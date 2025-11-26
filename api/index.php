@@ -12,7 +12,7 @@
 
 <body>
     <div id="cameraModal">
-        <div style="background:white; padding:10px; border-radius:8px;">
+        <div>
             <video id="videoBarcode"></video>
             <div id="qrPreview"></div>
             <button id="closeCamera">Cerrar</button>

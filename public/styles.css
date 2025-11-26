@@ -183,8 +183,16 @@ img {
     z-index:9999;
 }
 
-#videoBarcode, video {
+#cameraModal > div {
     width: 300px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#cameraModal video,
+#cameraModal #qrPreview {
+    width: 100%;
 }
 
 #closeCamera {
