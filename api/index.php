@@ -63,14 +63,14 @@
         }
         ?>
 
-        <form action="guardar_producto.php" method="POST" enctype="multipart/form-data">
+        <form id="form" action="guardar_producto.php" method="POST" enctype="multipart/form-data">
             <div class="IACC">
                 <h1>Taller de integración de Software - IACC</h1>
             </div>
             <div>
                 <h2>Registro de Productos</h2>
                 <label>Código de barras:</label>
-                <input type="text" id="barcode" name="barcode" value="<?= $editando ? $productoEditar['codigo_barras'] : '' ?>">
+                <input type="text" id="barcode" name="barcode" value="<?= $editando ? $productoEditar['codigo_barras'] : '' ?>" required>
                 <button type="button" id="scan">Escanear código</button>
                 <video id="preview" style="width:300px; display:none;"></video>
             </div>
@@ -86,7 +86,7 @@
 
             <div>
                 <label>Nombre del producto:</label>
-                <input type="text" name="nombre" value="<?= $editando ? $productoEditar['nombre'] : '' ?>">
+                <input type="text" name="nombre" value="<?= $editando ? $productoEditar['nombre'] : '' ?>" required>
                 <br>
             </div>
 
@@ -126,7 +126,7 @@
 
             <div>
                 <label>Número de estante (3 dígitos):</label>
-                <input type="number" name="numero_estante" maxlength="3" pattern="[0-9]{3}" value="<?= $editando ? $productoEditar['numero_estante'] : 0 ?>">
+                <input id="numero-estante" type="number" name="numero_estante" min="0" value="<?= $editando ? $productoEditar['numero_estante'] : 0 ?>" required>
                 <br>
             </div>
 
@@ -154,7 +154,7 @@
                 <br>
             </div>
 
-            <button type="submit">
+            <button type="submit" id="submitBtn">
                 <?= $editando ? "Actualizar" : "Guardar" ?>
             </button>
 
@@ -228,8 +228,9 @@
     </div>
 
     <script src="scanner.js"></script>
-    <script src="imagen.js"></script>
+    <script type="module" src="imagen.js"></script>
     <script src="piezasTotales.js"></script>
+    <script type="module" src="validaciones.js"></script>
 
 </body>
 

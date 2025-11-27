@@ -1,6 +1,15 @@
+import { fileSizeVal } from './validaciones.js'
+
 document.getElementById('imagen').addEventListener('change', (event) => {
   const file = event.target.files[0]
   if (!file) return
+
+  const fileSizeValidation = fileSizeVal(file)
+  
+  if (!fileSizeValidation) {
+    event.target.value = ''
+    return
+  }
 
   const preview = document.getElementById('img_preview')
   preview.src = URL.createObjectURL(file)
