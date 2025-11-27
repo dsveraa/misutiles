@@ -6,6 +6,11 @@
   },
   "routes": [
     { "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg))", "dest": "/public/$1" },
+
+    { "src": "/api/guardar_producto.php", "dest": "/api/guardar_producto.php" },
+    { "src": "/api/eliminar.php", "dest": "/api/eliminar.php" },
+    { "src": "/api/index.php", "dest": "/api/index.php" },
+
     { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }

@@ -65,7 +65,7 @@
 
         <form action="guardar_producto.php" method="POST" enctype="multipart/form-data">
             <div class="IACC">
-                <h1>Taller de integración de Software - IACCC</h1>
+                <h1>Taller de integración de Software - IACC</h1>
             </div>
             <div>
                 <h2>Registro de Productos</h2>

@@ -1,4 +1,9 @@
 <?php 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 require_once "env.php";
@@ -10,7 +15,6 @@ $db   = getenv("DB_NAME") ?: "misutiles";
 $port = getenv("DB_PORT") ?: 3306;
 
 $conn = new mysqli($host, $user, $pass, $db, $port);
-
 $conn->set_charset("utf8");
 
 if ($conn->connect_error) {
@@ -47,7 +51,6 @@ try {
         $stmt2->bind_param("isiiii", $id_ciudad, $numero_estante, $cantidad_piezas_sueltas, $cantidad_cajas, $piezas_por_caja, $id_producto);
         $stmt2->execute();
 
-        $mensaje = "Producto actualizado correctamente";
     } else {
         $sql1 = "INSERT INTO productos (codigo_barras, codigo_qr, nombre, imagen_url, id_tipo_producto) VALUES (?,?,?,?,?)";
         $stmt1 = $conn->prepare($sql1);
@@ -70,4 +73,3 @@ try {
 }
 
 $conn->close();
-?>
