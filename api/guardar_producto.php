@@ -1,5 +1,5 @@
 <?php 
-var_dump("hola");
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -65,7 +65,7 @@ try {
     }
 
     $conn->commit();
-    //header("Location: index.php");
+    header("Location: index.php");
 
 } catch (Exception $e) {
     $conn->rollback();
